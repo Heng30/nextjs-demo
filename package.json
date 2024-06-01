@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "init": "npx prisma migrate dev",
     "pm2": "pm2 start npm --name nextjs-demo -- start"
   },
   "dependencies": {
