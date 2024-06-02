@@ -9,8 +9,7 @@ export default function Header() {
         </Link>
 
         <div className="space-x-10 text-xl">
-          <Link href="/codesnippet/remove">Remove</Link>
-          <Link href="/codesnippet/execute">Execute</Link>
+          {/* <Link href="/snippet/remove">Remove</Link> */}
         </div>
       </nav>
     </div>

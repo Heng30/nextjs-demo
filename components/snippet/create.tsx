@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
 import { db } from '@/db';
 
-export default function CodeSnippetCreate() {
+export default function Create() {
   async function createSnippet(formData: FormData) {
     'use server';
 
@@ -15,20 +15,18 @@ export default function CodeSnippetCreate() {
       },
     });
 
-    console.log(snippet);
-
     redirect('/');
   }
 
   return (
     <div className="absolute inset-0 flex items-center justify-center">
         <form action={createSnippet} className="font-bold m-3 mx-48 w-full">
-          <h1 className="text-white text-6xl text-center mb-4">
+          <h1 className="text-white text-6xl text-center mb-8">
             Create a Code Snippet
           </h1>
           <div className="flex flex-col gap-4">
             <div className="flex gap-4">
-              <label className="w-12 text-white" htmlFor="title">
+              <label className="w-16 bg-blue-200 text-center rounded" htmlFor="title">
                 Title
               </label>
               <input
@@ -39,7 +37,7 @@ export default function CodeSnippetCreate() {
             </div>
 
             <div className="flex gap-4">
-              <label className="w-12 text-white" htmlFor="code">
+              <label className="w-16 bg-blue-200 text-center rounded" htmlFor="code">
                 Code
               </label>
               <textarea
