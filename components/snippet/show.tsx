@@ -1,13 +1,13 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { db } from '@/db';
-import ExecuteBtn from '@/components/snippet/executeBtn';
-import RemoveBtn from '@/components/snippet/removeBtn';
+import DeleteBtn from '@/components/snippet/delete-btn';
 
-interface SnippetProps {
+interface Props {
   id: number,
 }
 
-export default async function Show(props: SnippetProps) {
+export default async function Show(props: Props) {
   const snippet = await db.snippet.findFirst({
     where: {
       id: props.id
@@ -19,51 +19,22 @@ export default async function Show(props: SnippetProps) {
   }
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center">
-      <div className="font-bold m-3 mx-48 w-full">
-        <h1 className="text-white text-6xl text-center mb-8">
-          Execute a Code Snippet
+    <div className="absolute inset-0 flex flex-col justify-center mx-auto w-1/2">
+      <div className="flex justify-between font-bold mb-4">
+        <h1 className="text-white text-2xl font-bold">
+          {snippet.title}
         </h1>
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-4">
-            <label className="w-16 text-center bg-blue-200 rounded" htmlFor="title">
-              Title
-            </label>
-            <input
-              className="border rounded p-2 w-full"
-              name="title"
-              id="title"
-              value={snippet?.title}
-            ></input>
-          </div>
 
-          <div className="flex gap-4">
-            <label className="w-16 text-center bg-blue-200 rounded" htmlFor="code">
-              Code
-            </label>
-            <textarea
-              className="border rounded p-2 w-full h-48"
-              name="code"
-              id="code"
-              value={snippet?.code}
-            ></textarea>
-          </div>
-
-          <div className='flex space-x-4'>
-            {/* <RemoveBtn
-              text="Remove"
-              id={snippet?.id}
-              className="text-black rounded bg-blue-200 p-4 w-full"
-            /> */}
-
-            <ExecuteBtn
-              text="Execute"
-              code={snippet?.code}
-              className="text-black rounded bg-blue-200 p-4 w-full"
-            />
-          </div>
+        <div className="flex gap-4">
+          <DeleteBtn id={snippet.id} />
+          <Link href={`/snippet/${snippet.id}/edit`} className="rounded border p-2 bg-white">Edit</Link>
+          <Link href={`/snippet/${snippet.id}/execute`} className="rounded border p-2 bg-white">Execute</Link>
         </div>
       </div>
-    </div>
+
+      <div className="min-h-80 bg-gray-200 rounded p-4 text-xl">
+        {snippet.code}
+      </div>
+    </div >
   );
 }

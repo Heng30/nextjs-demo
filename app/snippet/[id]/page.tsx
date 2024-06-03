@@ -2,14 +2,14 @@ import Hero from '@/components/hero';
 import snippetExecuteImg from '@/public/snippet-execute.png';
 import SnippetShow from '@/components/snippet/show';
 
-interface ExecuteProps {
+interface Props {
     params: {
         id: string,
     }
 }
 
-export default async function ShowSnippet(props: ExecuteProps) {
-    await new Promise((r) => setTimeout(r, 1000));
+export default async function ShowSnippet(props: Props) {
+    // await new Promise((r) => setTimeout(r, 1000));
      
     const id = parseInt(props.params.id);
     return (
