@@ -1,6 +1,6 @@
 import snippetExecuteImg from '@/public/snippet-execute.png';
 import Hero from '@/components/hero';
-import SnippetExecute from '@/components/snippet/execute';
+import SnippetExecute from '@/components/snippets/execute';
 import { notFound } from 'next/navigation';
 import { db } from '@/db';
 

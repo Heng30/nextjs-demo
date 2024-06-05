@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { db } from '@/db';
-import DeleteBtn from '@/components/snippet/delete-btn';
+import DeleteBtn from '@/components/snippets/delete-btn';
 
 interface Props {
   id: number,
@@ -27,8 +27,8 @@ export default async function Show(props: Props) {
 
         <div className="flex gap-4">
           <DeleteBtn id={snippet.id} />
-          <Link href={`/snippet/${snippet.id}/edit`} className="rounded border p-2 bg-white">Edit</Link>
-          <Link href={`/snippet/${snippet.id}/execute`} className="rounded border p-2 bg-white">Execute</Link>
+          <Link href={`/snippets/${snippet.id}/edit`} className="rounded border p-2 bg-white">Edit</Link>
+          <Link href={`/snippets/${snippet.id}/execute`} className="rounded border p-2 bg-white">Execute</Link>
         </div>
       </div>
 

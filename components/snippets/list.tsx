@@ -7,7 +7,7 @@ export default async function List() {
     const renderedSnippets = snippets.map((snippet) => {
         return <Link
             key={snippet.id}
-            href={`/snippet/${snippet.id}`}
+            href={`/snippets/${snippet.id}`}
             className="flex w-2/3 text-xl bg-white justify-between font-bold rounded border items-center p-2"
         >
             <div>{snippet.title}</div>
@@ -19,13 +19,12 @@ export default async function List() {
         <div className="absolute inset-0 mt-32 flex flex-col items-center gap-4">
             <div className="flex justify-between w-2/3">
                 <h1 className="text-xl font-bold rounded bg-white p-2">Snippet</h1>
-                <Link href="/snippet/create" className="border p-2 rounded bg-white">Create</Link>
+                <Link href="/snippets/new" className="border p-2 rounded bg-white">New</Link>
             </div>
-            
+
             <div className="flex flex-col gap-2 items-center w-full">
                 {renderedSnippets}
             </div>
-
         </div>
     )
 }

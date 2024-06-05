@@ -3,7 +3,7 @@
 import { startTransition, useState } from 'react';
 import Editor from '@monaco-editor/react';
 import type { Snippet } from '@prisma/client';
-import * as actions from '@/components/snippet/actions';
+import * as actions from '@/components/snippets/actions';
 
 interface Props {
     snippet: Snippet,
@@ -12,6 +12,8 @@ interface Props {
 export default function EditForm({ snippet }: Props) {
     const [title, setTitle] = useState(snippet.title);
     const [code, setCode] = useState(snippet.code);
+
+    const updateSnippetAction = actions.updateSnippet.bind(null, snippet.id, title, code);
 
     return (
         <div className="absolute inset-0 flex items-center justify-center">
@@ -48,16 +50,11 @@ export default function EditForm({ snippet }: Props) {
                         </div>
                     </div>
 
-                    <button
-                        className="text-black rounded bg-blue-200 p-4"
-                        onClick={() => {
-                            startTransition(async () => {
-                                await actions.updateSnippet(snippet.id, snippet.title, code);
-                            });
-                        }}
-                    >
-                        Save
-                    </button>
+                    <form action={updateSnippetAction} className="w-full">
+                        <button type="submit" className="text-black rounded bg-blue-200 p-4 w-full">
+                            Save
+                        </button>
+                    </form>
                 </div>
             </div>
         </div >

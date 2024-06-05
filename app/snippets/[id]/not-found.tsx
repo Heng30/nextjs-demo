@@ -1,4 +1,3 @@
-
 export default function NotFound() {
     return (
         <div className="absolute inset-0 flex justify-center items-center">

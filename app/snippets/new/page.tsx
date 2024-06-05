@@ -1,12 +1,12 @@
 import snippetCreateImg from '@/public/snippet-create.jpg';
 import Hero from '@/components/hero';
-import SnippetCreate  from '@/components/snippet/create';
+import NewSnippet from '@/components/snippets/new';
 
-export default function Create() {
+export default function New() {
     return (
         <div className='w-full'>
             <Hero imgData={snippetCreateImg} imgAlt="create"></Hero>
-            <SnippetCreate />
+            <NewSnippet />
         </div>
 
     )

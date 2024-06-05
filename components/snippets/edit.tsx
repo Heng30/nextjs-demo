@@ -1,6 +1,6 @@
 import { db } from '@/db';
 import { notFound, redirect } from 'next/navigation';
-import SnippetFormEdit from '@/components/snippet/edit-form';
+import SnippetFormEdit from '@/components/snippets/edit-form';
 
 interface Props {
     id: number,

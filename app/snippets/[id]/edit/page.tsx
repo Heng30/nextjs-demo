@@ -1,7 +1,7 @@
 import { db } from '@/db';
 import editImg from '@/public/snippet-create.jpg';
 import Hero from '@/components/hero';
-import EditSnippet from '@/components/snippet/edit';
+import EditSnippet from '@/components/snippets/edit';
 
 interface Props {
     params: {

@@ -31,3 +31,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - npx prisma init --datasource-provider sqlite
 - add a `modle` in the `prisma/schema.prisma`
 - npx prisma migrate dev
+
+## Not Default Library
+- npm i @nextui-org/react framer-motion
+- add `import { nextui } from "nextui-org/react";` to the `tailwind.config.ts` file

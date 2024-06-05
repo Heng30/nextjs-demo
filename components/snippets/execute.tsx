@@ -7,7 +7,7 @@ interface Props {
   code: string,
 }
 
-export default async function Execute(props: Props) {
+export default function Execute(props: Props) {
   function runCode(code: string) {
     let executeCode = new Function(code);
     return executeCode();
