@@ -1,16 +1,21 @@
-import Link from 'next/link';
-import DiscussPath from '@/components/discuss/paths';
+import Link from "next/link";
+import DiscussPath from "@/components/discuss/paths";
 
 export default function Home() {
   const linkDetails = [
-    { "href": "/snippets", "text": "Code Snippet" },
-    { "href": DiscussPath.home(), "text": "Discuss Forum" },
+    { href: "/snippets", text: "Code Snippet" },
+    { href: DiscussPath.home(), text: "Discuss Forum" },
   ];
 
   const linkDetailsHtml = linkDetails.map((detail) => {
     return (
-      <div key={detail.href} className="w-48 h-32 flex items-center rounded-xl border border-red-400 bg-red-200 hover:bg-red-300">
-        <Link className="text-4xl text-center" href={detail.href}>{detail.text}</Link>
+      <div
+        key={detail.href}
+        className="w-48 h-32 flex items-center rounded-xl border border-red-100 bg-white hover:bg-red-100"
+      >
+        <Link className="text-4xl text-center" href={detail.href}>
+          {detail.text}
+        </Link>
       </div>
     );
   });
