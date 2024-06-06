@@ -33,7 +33,6 @@ export async function createSnippet(formState: { message: string }, formData: Fo
         }
     }
 
-
     revalidatePath('/snippets');
     redirect('/snippets');
 

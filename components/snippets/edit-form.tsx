@@ -1,6 +1,6 @@
 'use client';
 
-import { startTransition, useState } from 'react';
+import { useState } from 'react';
 import Editor from '@monaco-editor/react';
 import type { Snippet } from '@prisma/client';
 import * as actions from '@/components/snippets/actions';

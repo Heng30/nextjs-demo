@@ -1,21 +1,12 @@
 import type { StaticImageData } from 'next/image';
 import Image from 'next/image';
 
-interface HeroProps {
+interface Props {
   imgData: StaticImageData;
   imgAlt: string;
-  title?: string;
 }
 
-export default function Hero(props: HeroProps) {
-  const titleWidget = props.title ? (
-    <div className="pt-48 flex justify-center">
-      <h1 className="text-white text-6xl">{props.title}</h1>
-    </div>
-  ) : (
-    <></>
-  );
-
+export default function Hero(props: Props) {
   return (
     <div className="relative h-screen">
       <div className="absolute -z-10 inset-0">
@@ -27,8 +18,6 @@ export default function Hero(props: HeroProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900"></div>
       </div>
-
-      {titleWidget}
     </div>
   );
 }
