@@ -14,10 +14,7 @@ interface Props {
 
 export default function Show({ params: { slug, postId } }: Props) {
   return (
-    <div className="p-4 w-full bg-white rounded">
-      <Link className="text-gray-800" href={paths.topicShow(slug)}>
-        {"< "} Back to {slug}
-      </Link>
+    <div className="overflow-y-scroll no-scrollbar p-4 w-full bg-white rounded">
       <PostShow postId={postId} />
       <CommentCreateForm postId={postId} />
       <CommentList fetchData={() => fetchCommentsByPostId(postId)} />

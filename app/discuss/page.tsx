@@ -6,8 +6,8 @@ import { fetchTopPosts } from "@/db/queries/post";
 
 export default function Discuss() {
   return (
-    <div className="grid grid-cols-4 gap-2">
-      <div className="col-span-3 flex flex-col justify-start p-4 bg-white rounded">
+    <div className="h-full w-full grid grid-cols-4 gap-2">
+      <div className="overflow-y-scroll no-scrollbar col-span-3 p-4 bg-white rounded">
         <h1 className="text-2xl font-semibold m-2">Top Posts</h1>
         <TopPostList fetchData={() => fetchTopPosts()}></TopPostList>
       </div>

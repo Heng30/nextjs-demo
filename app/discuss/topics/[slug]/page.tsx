@@ -19,7 +19,7 @@ export default async function Slug({ params }: Props) {
 
   return (
     <div className="w-full h-full grid grid-cols-4 gap-2">
-      <div className="col-span-3 p-4 bg-white rounded h-full">
+      <div className="overflow-y-scroll no-scrollbar col-span-3 p-4 bg-white rounded">
         <h1 className="text-2xl font-semibold m-2">{slug}</h1>
         <PostList fetchData={() => fetchPostsByTopicSlug(slug)} />
       </div>

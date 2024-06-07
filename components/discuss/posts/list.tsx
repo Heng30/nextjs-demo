@@ -30,5 +30,5 @@ export default async function PostList({ fetchData }: Props) {
     );
   });
 
-  return <div className="space-y-2 h-full">{renderedPosts}</div>;
+  return <div className="grow space-y-2">{renderedPosts}</div>;
 }
