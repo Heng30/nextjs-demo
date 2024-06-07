@@ -1,21 +1,13 @@
-import { db } from '@/db';
-import editImg from '@/public/snippet-create.jpg';
-import Hero from '@/components/hero';
-import EditSnippet from '@/components/snippets/edit';
+import EditSnippet from "@/components/snippets/edit";
 
 interface Props {
-    params: {
-        id: string,
-    }
+  params: {
+    id: string;
+  };
 }
 
 export default function Edit(props: Props) {
-    const id = parseInt(props.params.id);
+  const id = parseInt(props.params.id);
 
-    return (
-        <div>
-            <Hero imgData={editImg} imgAlt="edit"></Hero>
-            <EditSnippet id={id}></EditSnippet>
-        </div>
-    );
+  return <EditSnippet id={id}></EditSnippet>;
 }

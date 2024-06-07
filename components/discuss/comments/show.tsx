@@ -1,6 +1,6 @@
-import Image from "next/image";
 import CommentCreateForm from "@/components/discuss/comments/create-form";
 import { commentWithAuthor } from "@/db/queries/comments";
+import { Avatar } from "@nextui-org/react";
 
 interface Props {
   commentId: string;
@@ -24,13 +24,7 @@ export default function CommentShow({ commentId, comments }: Props) {
   return (
     <div className="p-4 border mt-2 mb-1">
       <div className="flex gap-3">
-        <Image
-          src={comment.user.image || ""}
-          alt="user image"
-          width={40}
-          height={40}
-          className="w-10 h-10 rounded-full"
-        />
+        <Avatar src={comment.user.image || ""} alt="user image" size="sm" />
         <div className="flex-1 space-y-3">
           <p className="text-sm font-medium text-gray-500">
             {comment.user.name}

@@ -6,9 +6,11 @@ export default function DiscussLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col absolute inset-0 items-center">
+    <div className="h-full flex flex-col items-center">
       <DiscussHeader />
-      <div className="flex justify-center w-2/3 h-full mb-4">{children}</div>
+      <div className="w-2/3 h-full flex justify-center mb-4 bg-gray-200 p-1 rounded">
+        {children}
+      </div>
     </div>
   );
 }

@@ -6,14 +6,14 @@ import { fetchTopPosts } from "@/db/queries/post";
 
 export default function Discuss() {
   return (
-    <div className="w-full h-full grid grid-cols-4 gap-4 rounded">
-      <div className="col-span-3 flex flex-col justify-start bg-white">
-        <h1 className="text-2xl m-2">Top Posts</h1>
+    <div className="grid grid-cols-4 gap-2">
+      <div className="col-span-3 flex flex-col justify-start p-4 bg-white rounded">
+        <h1 className="text-2xl font-semibold m-2">Top Posts</h1>
         <TopPostList fetchData={() => fetchTopPosts()}></TopPostList>
       </div>
-      <div className="border shadow-sm py-3 px-2 rounded bg-white">
+      <div className="flex flex-col border shadow-sm py-3 px-2 rounded bg-white">
         <TopicCreateForm></TopicCreateForm>
-        <Divider className="my-2"></Divider>
+        <Divider className="my-4"></Divider>
         <h1 className="text-lg mb-2">Topics</h1>
         <TopicList></TopicList>
       </div>

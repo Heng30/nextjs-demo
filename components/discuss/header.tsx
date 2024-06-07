@@ -16,6 +16,9 @@ export default async function Header() {
         <Link className="font-bold text-xl" href="/">
           Home
         </Link>
+        <Link className="font-bold text-xl" href="/snippets">
+          Snippets
+        </Link>
         <Link className="font-bold text-xl" href={DiscussPaths.home()}>
           Discuss
         </Link>

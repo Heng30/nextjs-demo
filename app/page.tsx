@@ -1,5 +1,7 @@
 import Link from "next/link";
 import DiscussPath from "@/components/discuss/paths";
+import bgImg from "@/public/home.jpg";
+import Hero from "@/components/hero";
 
 export default function Home() {
   const linkDetails = [
@@ -21,8 +23,9 @@ export default function Home() {
   });
 
   return (
-    <div className="w-full">
-      <div className="absolute inset-0 flex flex-warp mt-48 w-2/3 mx-auto justify-center gap-16">
+    <div>
+      <Hero imgData={bgImg} imgAlt="bg image"></Hero>
+      <div className="absolute inset-0 flex flex-wrap mx-auto justify-center items-center gap-16">
         {linkDetailsHtml}
       </div>
     </div>

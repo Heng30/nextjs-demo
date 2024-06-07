@@ -57,11 +57,11 @@ export default function CommentCreateForm({
   );
 
   return (
-    <div className="px-2 flex flex-col gap-4">
+    <div className="flex flex-col gap-4">
       <Button
-        className=" self-start"
+        className="self-start border-none"
         size="sm"
-        variant="shadow"
+        variant="bordered"
         onClick={() => setOpen(!open)}
       >
         Reply

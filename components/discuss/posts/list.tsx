@@ -6,7 +6,6 @@ interface Props {
   fetchData: () => Promise<PostWithData[]>;
 }
 
-// TODO: Get list of posts into this component somehow
 export default async function PostList({ fetchData }: Props) {
   const posts = await fetchData();
   const renderedPosts = posts.map((post) => {
@@ -17,7 +16,7 @@ export default async function PostList({ fetchData }: Props) {
     }
 
     return (
-      <div key={post.id} className="border rounded p-2 mx-2">
+      <div key={post.id} className="border rounded p-2">
         <Link href={paths.postShow(topicSlug, post.id)}>
           <h3 className="text-lg font-bold">{post.title}</h3>
           <div className="flex flex-row gap-8">
@@ -31,5 +30,5 @@ export default async function PostList({ fetchData }: Props) {
     );
   });
 
-  return <div className="space-y-2">{renderedPosts}</div>;
+  return <div className="space-y-2 h-full">{renderedPosts}</div>;
 }
