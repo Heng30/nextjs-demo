@@ -1,5 +1,3 @@
-import Link from "next/link";
-import paths from "@/components/discuss/paths";
 import PostShow from "@/components/discuss/posts/post-show";
 import CommentCreateForm from "@/components/discuss/comments/create-form";
 import CommentList from "@/components/discuss/comments/list";

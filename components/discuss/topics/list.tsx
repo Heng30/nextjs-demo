@@ -1,21 +1,11 @@
-import Link from "next/link";
-import { Chip } from "@nextui-org/react";
 import { db } from "@/db";
-import paths from "@/components/discuss/paths";
+import ListItem from "./list-item";
 
 export default async function TopicList() {
   const topics = await db.topic.findMany();
 
   const renderedTopics = topics.map((topic) => {
-    return (
-      <div key={topic.id}>
-        <Link href={paths.topicShow(topic.slug)}>
-          <Chip color="warning" variant="flat">
-            {topic.slug}
-          </Chip>
-        </Link>
-      </div>
-    );
+    return <ListItem key={topic.id} topic={topic} />;
   });
 
   return <div className="flex flex-row flex-wrap gap-2">{renderedTopics}</div>;

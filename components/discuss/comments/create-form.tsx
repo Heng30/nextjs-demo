@@ -51,7 +51,9 @@ export default function CommentCreateForm({
           </div>
         ) : null}
 
-        <FormButton>Create Comment</FormButton>
+        <FormButton variant="shadow" color="primary">
+          Create Comment
+        </FormButton>
       </div>
     </form>
   );
@@ -59,7 +61,7 @@ export default function CommentCreateForm({
   return (
     <div className="flex flex-col gap-4">
       <Button
-        className="self-start border-none"
+        className="self-start border-none text-gray-500"
         size="sm"
         variant="bordered"
         onClick={() => setOpen(!open)}

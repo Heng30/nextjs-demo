@@ -22,7 +22,7 @@ export default function CommentShow({ commentId, comments }: Props) {
   });
 
   return (
-    <div className="p-4 border mt-2 mb-1">
+    <div className="p-4 border mt-2 mb-1 rounded">
       <div className="flex gap-3">
         <Avatar src={comment.user.image || ""} alt="user image" size="sm" />
         <div className="flex-1 space-y-3">

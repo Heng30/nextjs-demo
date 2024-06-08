@@ -15,9 +15,9 @@ export default async function PostShow({ postId }: Props) {
   }
 
   return (
-    <div className="my-4 gap-2 flex flex-col">
-      <h1 className="text-2xl font-bold">{post.title}</h1>
-      <p className="p-4 border rounded">{post.content}</p>
+    <div className="my-4 gap-4 flex flex-col">
+      <h1 className="text-2xl font-bold text-center">{post.title}</h1>
+      <p className="text-xl p-4 border rounded">{post.content}</p>
     </div>
   );
 }

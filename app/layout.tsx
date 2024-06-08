@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Providers from "@/app/providers";
 import "@/app/globals.css";
+import bgImg from "@/public/home.jpg";
+import Hero from "@/components/hero";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className + " bg-blue-100"}>
+      <body className={inter.className}>
+        <Hero imgData={bgImg} imgAlt="bg image" />
         <Providers>{children}</Providers>
       </body>
     </html>

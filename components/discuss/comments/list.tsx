@@ -21,7 +21,7 @@ export default async function CommentList({ fetchData }: Props) {
   });
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 mt-4">
       <h1 className="text-lg font-bold">All {comments.length} comments</h1>
       {renderedComments}
     </div>

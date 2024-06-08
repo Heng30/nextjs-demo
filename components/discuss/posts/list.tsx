@@ -1,34 +1,20 @@
-import Link from "next/link";
-import paths from "@/components/discuss/paths";
 import { PostWithData } from "@/db/queries/post";
+import ListItem from "./list-item";
 
 interface Props {
   fetchData: () => Promise<PostWithData[]>;
+  isHome: boolean;
 }
 
-export default async function PostList({ fetchData }: Props) {
+export default async function PostList({ fetchData, isHome }: Props) {
   const posts = await fetchData();
   const renderedPosts = posts.map((post) => {
-    const topicSlug = post.topic.slug;
-
-    if (!topicSlug) {
-      throw new Error("Need a slug to link to a post");
-    }
-
-    return (
-      <div key={post.id} className="border rounded p-2">
-        <Link href={paths.postShow(topicSlug, post.id)}>
-          <h3 className="text-lg font-bold">{post.title}</h3>
-          <div className="flex flex-row gap-8">
-            <p className="text-xs text-gray-400">By {post.user.name}</p>
-            <p className="text-xs text-gray-400">
-              {post._count.comments} comments
-            </p>
-          </div>
-        </Link>
-      </div>
-    );
+    return <ListItem key={post.id} post={post} isHome={isHome} />;
   });
 
-  return <div className="grow space-y-2">{renderedPosts}</div>;
+  return (
+    <div className="flex-grow h-0 overflow-y-auto space-y-2 no-scrollbar">
+      {renderedPosts}
+    </div>
+  );
 }
