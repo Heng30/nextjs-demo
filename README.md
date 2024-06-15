@@ -44,3 +44,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - [course video](https://www.bilibili.com/video/BV1Fj411j72B?p=1&vd_source=da23da82658adda9cbdfd045a9e6daf7)
 - [bulma the modern CSS framework](https://bulma.io/)
 - [jsonplachoder: fake json api for test](https://jsonplaceholder.typicode.com/)
+
+"postinstall": "npm install prisma --save-dev && npx prisma generate && npx prisma migrate deploy && ls ./prisma",
