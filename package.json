@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "init": "npm install prisma --save-dev && npx prisma migrate deploy",
-    "postinstall": "npx prisma generate",
+    "postinstall": "npm install prisma --save-dev && npx prisma migrate deploy && ls ./prisma",
     "pm2": "pm2 start npm --name nextjs-demo -- start"
   },
   "dependencies": {
