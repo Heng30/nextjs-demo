@@ -1,12 +1,14 @@
-import Link from "next/link";
-import DiscussPath from "@/components/discuss/paths";
-import bgImg from "@/public/home.jpg";
-import Hero from "@/components/hero";
+import Link from 'next/link';
+import DiscussPath from '@/components/discuss/paths';
+import bgImg from '@/public/home.jpg';
+import Hero from '@/components/hero';
 
 export default function Home() {
+  // throw new Error('Test Error');
+
   const linkDetails = [
-    { href: "/snippets", text: "Code Snippet" },
-    { href: DiscussPath.home(), text: "Discuss Forum" },
+    { href: '/snippets', text: 'Code Snippet' },
+    { href: DiscussPath.home(), text: 'Discuss Forum' },
   ];
 
   const linkDetailsHtml = linkDetails.map((detail) => {

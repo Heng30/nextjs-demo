@@ -37,5 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - add `import { nextui } from "nextui-org/react";` to the `tailwind.config.ts` file
 - `npm install --save-exact @auth/core@0.18.1 @auth/prisma-adapter@1.0.6 next-auth@5.0.0-beta.3`
 
+## npm packages:
+- axios: https request
+
 ## Reference
 - [course video](https://www.bilibili.com/video/BV1Fj411j72B?p=1&vd_source=da23da82658adda9cbdfd045a9e6daf7)
+- [bulma the modern CSS framework](https://bulma.io/)
+- [jsonplachoder: fake json api for test](https://jsonplaceholder.typicode.com/)

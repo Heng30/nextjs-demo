@@ -1,5 +1,5 @@
-import type { StaticImageData } from "next/image";
-import Image from "next/image";
+import type { StaticImageData } from 'next/image';
+import Image from 'next/image';
 
 interface Props {
   imgData: StaticImageData;

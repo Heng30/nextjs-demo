@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import paths from "@/components/discuss/paths";
-import { PostWithData } from "@/db/queries/post";
-import IconButton from "@/components/common/icon-button";
-import { DeleteIcon } from "@/components/icons";
-import * as actions from "@/components/discuss/actions";
-import { useFormState } from "react-dom";
-import { toast } from "react-hot-toast";
+import Link from 'next/link';
+import paths from '@/components/discuss/paths';
+import { PostWithData } from '@/db/queries/post';
+import IconButton from '@/components/common/icon-button';
+import { DeleteIcon } from '@/components/icons';
+import * as actions from '@/components/discuss/actions';
+import { useFormState } from 'react-dom';
+import { toast } from 'react-hot-toast';
 
 interface Props {
   post: PostWithData;
@@ -17,7 +17,7 @@ export default function ListItem({ post, isHome }: Props) {
   const topicSlug = post.topic.slug;
 
   if (!topicSlug) {
-    throw new Error("Need a slug to link to a post");
+    throw new Error('Need a slug to link to a post');
   }
 
   const [formState, action] = useFormState(
