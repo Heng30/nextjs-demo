@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx prisma migrate dev",
+    "postinstall": "npx prisma migrate deploy",
     "prismaMigrateLocal": "dotenv -e .env.local -- npx prisma migrate dev",
     "pm2": "pm2 start npm --name nextjs-demo -- start"
   },
@@ -31,6 +31,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
